@@ -1,0 +1,19 @@
+<div class="title" style="padding-top: 100px;">
+    <h2>Favourites</h2>
+    <div class="underline"></div>
+</div>
+
+<div class="section-center" style="padding: 50px;">
+    <article ng-repeat="favourite in favouriteItems" class="menu-item">
+        <img src={{favourite.img}} alt={{favourite.title}} class="photo" />
+        <div class="item-info">
+            <header>
+                <h4>{{favourite.title}}</h4>
+                <h4 class="price">₹{{favourite.price}}</h4>
+            </header>
+            <p class="item-text">
+                {{favourite.desc}}
+            </p>
+        </div>
+    </article>
+</div>

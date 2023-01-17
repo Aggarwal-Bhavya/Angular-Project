@@ -1,0 +1,203 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
+
+:root {
+    --clr-grey-10: hsl(210, 36%, 96%);
+    --clr-gold: #c59d5f;
+    --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --radius: 0.5rem;
+    --transition: all 0.3s linear;
+
+}
+
+body {
+    /* background: #1b4556; */
+    background: var(--clr-grey-10);
+    font-family: 'Roboto', sans-serif;
+}
+
+.signup-box {
+    margin-top: 75px;
+    height: auto;
+    /* background: var(--clr-gold); */
+    background: transparent;
+    text-align: center;
+    position: relative;
+    box-shadow: 1px 1px 2.75px var(--clr-gold);
+    border-color: var(--clr-gold);
+    border: 2px;
+    color: var(--clr-gold);
+    border-radius: var(--radius);
+    /* box-shadow: 0 3px 6px rgba(178, 175, 175, 0.1), 0 3px 6px rgba(144, 139, 139, 0.2); */
+}
+
+/* .signup-box:hover {
+    margin-top: 75px;
+    height: auto;
+    background: #0c1920;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 3px 6px rgba(178, 175, 175, 0.1), 0 3px 6px rgba(144, 139, 139, 0.2);
+} */
+
+.signup-title {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 30px;
+    letter-spacing: 1.5px;
+    font-weight: bolder;
+    color: var(--clr-gold);
+    
+}
+
+.signup-form {
+    margin-top: 25px;
+    text-align: center;
+}
+
+input[type='text'], [type='email'],
+input[type='text']::placeholder, [type='email']::placeholder {
+    /* background-color: #0c1920; */
+    background: transparent;
+    border-radius: 10px;
+    border-color: var(--clr-gold);
+    font-weight: bold;
+    outline: 0;
+    color: var(--clr-gold);
+    letter-spacing: 2px;
+}
+
+input[type='password'], input[type='password']::placeholder {
+    /* background-color: #0c1920; */
+    background-color: transparent;
+    border-radius: 10px;
+    border-color: var(--clr-gold);
+    font-weight: bold;
+    outline: 0;
+    color: var(--clr-gold);
+    letter-spacing: 2px;
+}
+
+input::placeholder {
+    color: var(--clr-gold);
+}
+
+.form-group {
+    margin-bottom: 20px;
+    outline: 0;
+}
+
+.form-group.ourDiv i {
+    float: right;
+    
+}
+
+/* .eye{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    margin-right: 20px;
+} */
+
+.form-control:focus {
+    border-color: inherit;
+    box-shadow: none;
+    /* background-color: #0c1920; */
+    /* color: rgb(251, 251, 251); */
+    background: transparent;
+    color: var(--clr-gold);
+    outline: 0;
+}
+
+
+.error-text {
+    font-size: 12px;
+    color: #bf7171;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-top: 5px;
+    text-align: right;
+    margin-right: 20px;
+}
+
+/* .error-text, 
+.error-icon {
+    display: none;
+} */
+
+/* .form-group.error .error-text,
+.form-group.error .error-icon {
+    display: block;
+} */
+
+.form-group.error input {
+    border-color: #bf7171;
+}
+
+.btn-outline-primary:hover, .btn-outline-primary:active, .btn-outline-primary:focus {
+    /* background-color: #5a8ca9; */
+    background-color: transparent;
+    border-color: var(--clr-gold);
+    right: 0px;
+    color: var(--clr-gold);
+}
+
+.btn-outline-primary:disabled {
+    color: var(--clr-gold);
+}
+.btn {
+    /* color: #9d9d9d; */
+    color: var(--clr-gold);
+    border-radius: 10px;
+    border-color: var(--clr-gold);
+    display: flex;
+    justify-content: center;
+    float: left;
+    background: transparent;
+    font-size: 1rem;
+    margin: 0 0.5rem;
+    letter-spacing: 2px;
+    border-radius: var(--radius);
+    padding: 0.375rem 0.75rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn:hover, .btn:focus, .btn-focus {
+    background: var(--clr-gold) !important;
+    color: var(--clr-grey-10) !important;
+    box-shadow: none;
+}
+
+.signup-btm {
+    float: left;
+}
+
+.signup-button {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.error-icon {
+    position: absolute;
+    right: 0;
+}
+
+a {
+    color:var(--clr-gold) !important;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    float: right;
+    text-decoration: none;
+}
+
+.unit {
+    display: flex;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    float: left;
+    /* flex-direction: row; */
+    /* justify-content: space-between; */
+}

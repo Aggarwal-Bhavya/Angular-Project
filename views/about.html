@@ -1,0 +1,52 @@
+<!-- SCRIPT FOR NUMBERS -->
+<script>
+    const items = [...document.querySelectorAll('.number')];
+
+    const updateCount = (ele) => {
+        const value = parseInt(ele.dataset.value);
+        const increment = Math.ceil(value/1000);
+        // const increment = 1;
+        let initialValue = 0;
+
+        const increaseCount = setInterval(() => {
+            initialValue += increment;
+
+            if(initialValue > value) {
+                ele.textContent = `${value}+`;
+                clearInterval(increaseCount);
+                return;
+            }
+            ele.textContent = `${initialValue}+`;
+        }, 1);
+    };
+
+    items.forEach((item) => {
+        updateCount(item);
+    });
+</script>
+
+<!-- TITLE -->
+<div class="title" style="padding-top: 100px;">
+    <h2>About Us</h2>
+    <div class="underline"></div>
+</div>
+
+<section class="number-section">
+    <!-- SINGLE NUMBER 1 -->
+    <article class="number-article">
+        <span class="number" data-value="250">0</span>
+        <p>Outlets</p>
+    </article>
+
+    <!-- SINGLE NUMBER 2 -->
+    <article class="number-article">
+        <span class="number" data-value="131400">0</span>
+        <p>Working Hours Spent</p>
+    </article>
+
+    <!-- SINGLE NUMBER 3 -->
+    <article class="number-article">
+        <span class="number" data-value="75000">0</span>
+        <p>Happy Customers</p>
+    </article>
+</section>

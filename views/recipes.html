@@ -1,0 +1,35 @@
+<!-- TITLE -->
+<div class="title" style="padding-top: 100px;">
+    <h2>Recipes</h2>
+    <div class="underline"></div>
+</div>
+
+<!-- SEARCH FEATURE -->
+<!-- SEARCH BOX CONTAINER -->
+<div ng-model="container">
+    <section class="search-section">
+        <div class="search-bar">
+            <form ng-model="searchForm">
+                <input ng-model="search" type="search" placeholder="Search for a recipe"
+                       ng-model-options="{ debounce: 1000 }" />
+                <i class="fa fa-search" id="searchBtn"></i>
+                <!-- <ion-icon id="searchBtn" name="search"></ion-icon> -->
+            </form>
+        </div>
+    </section>
+
+    <!-- SEARCH RESULT -->
+    <div>
+        <div class="item" ng-repeat="item in searchedData">
+            <img src={{item.recipe.image}} alt="" class="photo">
+            <div class="flex-container" style="display: flex; align-items: center; justify-content: space-between;">
+                <h4 style="margin-top: 10px; padding-top: 8px; text-transform: none; letter-spacing: 0.3rem;">{{item.recipe.label}}</h4>
+                <a href="{{item.recipe.url}}" target="_blank">View Recipe</a>
+            </div>
+            <p class="item-data">Calories: {{item.recipe.calories.toFixed(2)}}</p>
+            <p class="item-data">Cuisine: {{item.recipe.cuisineType.length > 0 ? item.recipe.cuisineType : 'No Data Found'}}</p>
+            <p class="item-data">Diet Labels: {{item.recipe.dietLabels.length > 0 ? item.recipe.dietLabels : 'No Data Found'}}</p>
+            <p class="item-data">Health Labels: {{item.recipe.healthLabels}}</p>
+        </div>
+    </div>
+</div>

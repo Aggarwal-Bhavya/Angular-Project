@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "title": "buttermilk pancakes",
+        "category": "breakfast",
+        "price": 200,
+        "img": "/data/images/item-1.jpeg",
+        "desc": "Buttermilk pancakes are deliciously buttery and fluffy with golden, crisp edges and an irresistible buttermilk flavour."
+    },
+    {
+        "id": 2,
+        "title": "oreo dream",
+        "category": "beverages",
+        "price": 189,
+        "img": "/data/images/item-6.jpeg",
+        "desc": "Real ice cream mixed with OREO Cookie Pieces and chocolate syrup into a thick and creamy shake, finished with whipped topping and a cherry."
+    },
+    {
+        "id": 3,
+        "title": "egg attack",
+        "category": "lunch",
+        "price": 300,
+        "img": "/data/images/item-5.jpeg",
+        "desc": "A unique combination of perfectly steamed egg, classic mayonnaise, chopped onions with a sprinkling of magic masala sandwiched in a toasted bun."
+    },
+    {
+        "id": 4,
+        "title": "bacon overflow",
+        "category": "breakfast",
+        "price": 899,
+        "img": "/data/images/item-7.jpeg",
+        "desc": "A flame-grilled beef patty with crispy bacon, melted American cheese, crunchy pickles, yellow mustard, and ketchup on a toasted sesame seed bun."
+    },
+    {
+        "id": 5,
+        "title": "steak",
+        "category": "dinner",
+        "price": 499,
+        "img": "/data/images/item-10.jpeg",
+        "desc": "Tender, juicy, cooked perfectly and perfectly seasoned."
+    }
+]

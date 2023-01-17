@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap and Font Awesome -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link rel="icon" href="../favicon.png">
+
+    <!-- Angular and Routing CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.js"
+        integrity="sha512-Us1MTv7/lzaM0GzbeWQschX8b+8dhj7v/9aEdDLC1XDDQ6IYN9fLRSvNTss6Gkx7gCN1cmqHD0GQN85Kk95zjg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-route.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/ngstorage/0.3.6/ngStorage.min.js"></script>
+    <script type="text/javascript" src="./signup.js"></script>
+
+    <link rel="stylesheet" href="signup.css" type="text/css">
+    <title>Our-Menu</title>
+</head>
+
+<body>
+    <!-- Parent Cotainer -->
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-3 col-md-2"></div>
+
+            <!-- Outer container for signup-panel -->
+            <div class="col-lg-6 col-md-8 signup-box">
+
+                <!-- Signup panel title div -->
+                <div class="col-lg-12 signup-title">
+                    SIGNUP PANEL
+                </div>
+
+                <!-- Parent div for complete form -->
+                <div class="col-lg-12 signup-form">
+
+                    <form name="signupForm" ng-controller="signupFormController" novalidate>
+
+                        <!-- Each element of label-input pair has class form-group -->
+                        <div class="form-group">
+
+                            <!-- USERNAME -->
+                            <div class="form-group">
+                                <!-- <label class="form-control-label">USERNAME</label> -->
+                                <input type="text" class="form-control" name="username" ng-model="username"
+                                    ng-minlength="5" ng-maxlength="30" placeholder="Username"
+                                    ng-pattern="/^[A-Za-z][A-Za-z0-9_]{7,29}$/" ng-required="true" />
+                                <img src="./icon-error.svg" class="error-icon" alt="error-img"
+                                    ng-show="signupForm.username.$invalid && signupForm.username.$touched" />
+                                <p class="error-text"
+                                    ng-show="signupForm.username.$error.required && signupForm.username.$touched">
+                                    REQUIRED!</p>
+                                <p class="error-text"
+                                    ng-show="signupForm.username.$error.pattern && signupForm.username.$touched">Provide
+                                    a valid alphanumeric username of length 8-30</p>
+                            </div>
+
+
+                            <!-- EMAIL -->
+                            <div class="form-group">
+                                <!-- <label class="form-control-label">E-MAIL</label> -->
+                                <input type="email" class="form-control" name="email" placeholder="E-mail"
+                                    ng-model="email" ng-pattern="/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/"
+                                    ng-required="true" />
+                                <img src="./icon-error.svg" class="error-icon" alt="error-img"
+                                    ng-show="signupForm.email.$invalid && signupForm.email.$touched" />
+                                <p class="error-text"
+                                    ng-show="signupForm.email.$error.required && signupForm.email.$touched">REQUIRED!
+                                </p>
+                                <p class="error-text"
+                                    ng-show="signupForm.email.$error.pattern && signupForm.email.$touched">Provide your
+                                    email address in format: yourname@example.com</p>
+                            </div>
+
+
+                            <!-- PHONE NUMBER -->
+                            <div class="form-group">
+                                <!-- <label class="form-control-label">PHONE NUMBER</label> -->
+                                <input type="text" class="form-control" name="phone" ng-model="phone" ng-maxlength="10"
+                                    ng-minlength="10" ng-pattern="/^[1-9][0-9]{9}$/" placeholder="Phone Number"
+                                    ng-required="true" />
+                                <img src="./icon-error.svg" class="error-icon" alt="error-img"
+                                    ng-show="signupForm.phone.$invalid && signupForm.phone.$touched" />
+                                <p class="error-text"
+                                    ng-show="signupForm.phone.$error.required && signupForm.phone.$touched">REQUIRED!
+                                </p>
+                                <p class="error-text"
+                                    ng-show="signupForm.phone.$error.pattern && signupForm.phone.$touched">Provide a
+                                    valid 10-digit phone number</p>
+                            </div>
+
+
+                            <!-- PASSWORD -->
+                            <div class="form-group ourDiv">
+                                <!-- <label class="form-control-label">PASSWORD</label> -->
+                                <input ng-attr-type="{{ showPassword ? 'text' : 'password'}}" class="form-control" name="password" ng-model="password"
+                                    ng-minlength="8" ng-maxlength="20"
+                                    ng-pattern="/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,20}$/"
+                                    placeholder="Password" ng-required="true" />
+
+                                <i class="far fa-eye" ng-click="toggleShowPassword()" 
+                                    ng-class="{'far fa-eye': showPassword, 'far fa-eye-slash': !showPassword}"
+                                    style="cursor: pointer; margin-top: -35px;margin-right: 20px;"></i> 
+                                <!-- <input type=" checkbox" onclick="showEntry()" /> Show Password  -->
+
+                                <img src="./icon-error.svg" class="error-icon" alt="error-img"
+                                    ng-show="signupForm.password.$invalid && signupForm.password.$touched" />
+                                <p class="error-text"
+                                    ng-show="signupForm.password.$error.required && signupForm.password.$touched">
+                                    REQUIRED!</p>
+                                <p class="error-text"
+                                    ng-show="signupForm.password.$error.pattern && signupForm.password.$touched">
+                                    Password must be at least 8 characters and must include 1 lowercase, 1 uppercase, 1
+                                    special character and 1 number</p>
+                            </div>
+
+
+                            <!-- CONFIRM PASSWORD -->
+                            <div class="form-group">
+                                <!-- <label class="form-control-label">CONFIRM PASSWORD</label> -->
+                                <input ng-attr-type="{{ checkPassword ? 'text' : 'password' }}" class="form-control" name="confirmPassword"
+                                    ng-model="confirmPassword" placeholder="Confirm Password" ng-required="true" />
+                                
+                                <i class="far fa-eye" ng-click="toggleShowPassword2()"
+                                    ng-class="{'far fa-eye': checkPassword, 'far fa-eye-slash': !checkPassword}"
+                                    style="cursor: pointer; margin-top: -35px;margin-right: 20px; float: right;"></i>
+                                                            
+                                <img src="./icon-error.svg" class="error-icon" alt="error-img"
+                                    ng-show="signupForm.confirmPassword.$touched" ng-hide="check()" />
+                                <p class="error-text"
+                                    ng-show="signupForm.confirmPassword.$error.required && signupForm.confirmPassword.$touched && check()">
+                                    REQUIRED!</p>
+                                <p class="error-text" ng-show="signupForm.confirmPassword.$touched && !check()">Password doesn't match</p>
+                                <!-- <p class="error-text" ng-show="!signupForm.confirmPassword.$error.required && signupForm.confirmPassword.$error.noMatch && signupForm.password.$dirty && .password_c!=formModel.password"></p> -->
+                            </div>
+
+
+                            <!-- SIGN UP BUTTON -->
+                            <div class="col-lg-6 signup-btm signup-button">
+                                <div class="unit">
+                                    <label><a href="./login.html">Login NOW!</a></label>
+                                    <button type="submit" class="btn btn-outline-primary" ng-click="addUser()"
+                                        ng-disabled="signupForm.$invalid" value="SIGNUP">SIGNUP</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
