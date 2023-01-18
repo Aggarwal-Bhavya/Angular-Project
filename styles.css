@@ -261,27 +261,53 @@ a {
 
 .item-info header {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     border-bottom: 0.5px dotted var(--clr-grey-5);
 }
 
 .item-info header .add-to-cart {
-    margin-left: 5px;
-    border-radius: var(--radius);
+    /* margin-left: 5px; */
+    /* border-radius: var(--radius); */
     padding: 8.5px;
     font-size: 1rem;
     letter-spacing: 1px;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     cursor: pointer;
     border-color: var(--clr-gold);
     color: var(--clr-gold);
     transition: var(--transition);
+    border-left: none;
+    border-right: none;
     /* background: transparent; */
 }
 
-.add-to-cart:hover {
+.add-to-cart:hover,
+.decrementBtn:hover, 
+.incrementBtn:hover {
     background: var(--clr-gold);
     color: var(--clr-white) !important;
+}
+
+.decrementBtn {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.incrementBtn {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.item-info header .decrementBtn,
+.item-info header .incrementBtn {
+    padding: 5.5px;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    border-color: var(--clr-gold);
+    color: var(--clr-gold);
+    transition: var(--transition);
 }
 
 .item-info h4 {

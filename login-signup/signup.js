@@ -1,6 +1,10 @@
 var myApp = angular.module('myApp', []);
 
-myApp.controller('signupFormController', ['$scope', '$window', 'getLocalStorage', function ($scope, $window, getLocalStorage) {
+// myApp.run(function($rootScope) {
+//     $rootScope.intendedUser = {};
+// })
+
+myApp.controller('signupFormController', ['$scope', '$window', '$rootScope' ,'getLocalStorage', function ($scope, $window, $rootScope, getLocalStorage) {
     $scope.showPassword = false;
     $scope.checkPassword = false;
     $scope.loginPassword = false;
@@ -35,12 +39,14 @@ myApp.controller('signupFormController', ['$scope', '$window', 'getLocalStorage'
             'email': $scope.email,
             'phone': $scope.phone,
             'password': $scope.password,
-            'confirmPassword': $scope.confirmPassword
+            'confirmPassword': $scope.confirmPassword, 
+            'basket': []
         };
         if ($scope.users.some((person) => {
             return person.email == $scope.email || person.username == $scope.username;
         })) {
             alert('This email id or username is already in use!')
+            
         } else {
             $scope.users.push($scope.user);
             getLocalStorage.updateUsers($scope.users);
@@ -59,9 +65,16 @@ myApp.controller('signupFormController', ['$scope', '$window', 'getLocalStorage'
             return (person.email == $scope.loginUsername || person.username == $scope.loginUsername) && person.password == $scope.loginCredentials
         })) {
             console.log('user found');
+            // console.log($scope.users)
             alert('User logged in successfully!');
+            // $rootScope.intendedUser = person;
             localStorage.setItem('code', 'secret');
+            localStorage.setItem('currUser', $scope.loginUsername);
             $window.location.href = '../index.html';
+            // $scope.currUser = users.filter((user) => {
+            //     return (user.email == $scope.loginUsername || user.username == $scope.loginUsername) && user.password == $scope.loginCredentials
+            // })[0];
+            // console.log($scope.currUser);
         } else {
             alert('Login failed! Please retry!')
         }

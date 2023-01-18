@@ -1,5 +1,5 @@
 <!-- SCRIPT FOR NUMBERS -->
-<script>
+<!-- <script>
     const items = [...document.querySelectorAll('.number')];
 
     const updateCount = (ele) => {
@@ -23,7 +23,26 @@
     items.forEach((item) => {
         updateCount(item);
     });
-</script>
+</script> -->
+
+<!-- NAVIGATION BAR START -->
+<div class='nav-center'>
+    <div class='nav-header'><a href='index.html'><img src='favicon.png' class='logo' alt='logo'>
+            <h4 class='nav-name'>Our-Menu</h4>
+        </a></div>
+</div>
+<ul class='links'>
+    <li><a href='#!/recipes'>Recipes</a></li>
+    <li><a href='#!/home'>Menu</a></li>
+    <li><a href='#!/favourites'>Favourites</a></li>
+    <li><a href='#!/about'>About Us</a></li>
+    <li><a href='#!know-more'>Know More</a></li>
+    <li><a href='#!/cart'>Cart<i class='fas fa-shopping-cart' style='position: relative;'>
+                <div id='cartAmount' class='cartAmount'>0</div>
+            </i></a></li>
+    <li><a href='#!/logout' ng-click="logout()">Logout</a></li>
+</ul>
+<!-- NAVIGATION BAR END -->
 
 <!-- TITLE -->
 <div class="title" style="padding-top: 100px;">
@@ -34,19 +53,19 @@
 <section class="number-section">
     <!-- SINGLE NUMBER 1 -->
     <article class="number-article">
-        <span class="number" data-value="250">0</span>
+        <span class="number" data-value="250">250+</span>
         <p>Outlets</p>
     </article>
 
     <!-- SINGLE NUMBER 2 -->
     <article class="number-article">
-        <span class="number" data-value="131400">0</span>
+        <span class="number" data-value="131400">131400+</span>
         <p>Working Hours Spent</p>
     </article>
 
     <!-- SINGLE NUMBER 3 -->
     <article class="number-article">
-        <span class="number" data-value="75000">0</span>
+        <span class="number" data-value="75000">75000+</span>
         <p>Happy Customers</p>
     </article>
 </section>

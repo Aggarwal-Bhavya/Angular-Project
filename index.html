@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
-    <link rel="icon" href="favicon.png">
+    <link rel="icon" href="./favicon.png">
     <link rel="stylesheet" href="styles.css" type="text/css">
 
 
@@ -19,13 +19,16 @@
         integrity="sha512-Us1MTv7/lzaM0GzbeWQschX8b+8dhj7v/9aEdDLC1XDDQ6IYN9fLRSvNTss6Gkx7gCN1cmqHD0GQN85Kk95zjg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-route.min.js"></script>
+    
     <script type="text/javascript" src="./mainControl.js"></script>
+    <script type="text/javascript" src="./signup.js"></script>
+    
     <title>Our-Menu</title>
 
 </head>
 
 <body ng-controller="mainControl">
-    <header ng-include="'navbar.html'"></header>
+    <!-- <header ng-include="'navbar.html'"></header> -->
     <main ng-view=""></main>
 </body>
 
