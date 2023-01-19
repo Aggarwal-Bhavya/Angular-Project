@@ -112,7 +112,7 @@ input::placeholder {
 
 .error-text {
     font-size: 12px;
-    color: #bf7171;
+    color: #ef5353;
     font-weight: bold;
     letter-spacing: 1px;
     margin-top: 5px;
@@ -134,17 +134,26 @@ input::placeholder {
     border-color: #bf7171;
 }
 
-.btn-outline-primary:hover, .btn-outline-primary:active, .btn-outline-primary:focus {
+.btn-outline-primary:hover, .btn-outline-primary:active, .btn-outline-primary:focus, .btn-outline-primary:disabled {
     /* background-color: #5a8ca9; */
     background-color: transparent;
     border-color: var(--clr-gold);
     right: 0px;
-    color: var(--clr-gold);
+    color: var(--clr-gold) !important;
 }
 
+
 .btn-outline-primary:disabled {
-    color: var(--clr-gold);
+    /* color: var(--clr-gold) !important;
+    border-color: var(--clr-gold); */
+    cursor: not-allowed;
 }
+
+.btn-outline-primary {
+    color: var(--clr-gold) !important;
+    border-color: var(--clr-gold) !important;
+}
+
 .btn {
     /* color: #9d9d9d; */
     color: var(--clr-gold);

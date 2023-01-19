@@ -46,10 +46,10 @@ input[type='text'],
 input[type='text']::placeholder {
     background: transparent;
     border-radius: 10px;
-    border-color: var(--clr-gold);
+    border-color: var(--clr-gold) !important;
     font-weight: bold;
     outline: 0;
-    color: var(--clr-gold);
+    color: var(--clr-gold) !important;
     letter-spacing: 2px;
 }
 
