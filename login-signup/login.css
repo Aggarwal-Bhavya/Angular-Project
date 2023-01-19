@@ -64,9 +64,27 @@ input[type='password'], input[type='password']::placeholder {
     letter-spacing: 2px;
 }
 
+input::placeholder, input:active, input[type='password']:active {
+    color: var(--clr-gold);
+    border-color: var(--clr-gold);
+    border-width: 1px;
+    box-shadow: none !important;
+}
+
+input:hover,
+input[type='password']:hover {
+    border-color: var(--clr-gold);
+}
+
 .form-group {
     margin-bottom: 40px;
     outline: 0;
+}
+
+.form-control input:active {
+    border-color: var(--clr-gold);
+    border-width: 1;
+    border-style: solid;
 }
 
 .form-control:focus {

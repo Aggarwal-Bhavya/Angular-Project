@@ -58,12 +58,16 @@ input[type='text'], [type='email'],
 input[type='text']::placeholder, [type='email']::placeholder {
     /* background-color: #0c1920; */
     background: transparent;
-    border-radius: 10px;
-    border-color: var(--clr-gold);
+    border-radius: 10px !important;
+    border-color: var(--clr-gold) !important;
     font-weight: bold;
     outline: 0;
-    color: var(--clr-gold);
+    color: var(--clr-gold) !important;
     letter-spacing: 2px;
+}
+
+input[type='email']:hover {
+    background-color: transparent;
 }
 
 input[type='password'], input[type='password']::placeholder {
@@ -77,9 +81,16 @@ input[type='password'], input[type='password']::placeholder {
     letter-spacing: 2px;
 }
 
-input::placeholder {
+input::placeholder, input:active {
     color: var(--clr-gold);
+    border-color: var(--clr-gold);
+    box-shadow: none !important;
 }
+
+input:hover {
+    border-color: var(--clr-gold);
+}
+
 
 .form-group {
     margin-bottom: 20px;

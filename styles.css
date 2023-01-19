@@ -158,7 +158,7 @@ p {
 }
 
 .btn:hover {
-    color: var(--clr-white);
+    color: var(--clr-white) !important;
     background: var(--clr-black);
 }
 
@@ -406,7 +406,7 @@ nav {
 
 .links a:hover {
     background: var(--clr-gold);
-    color: var(--clr-white);
+    color: var(--clr-white) !important;
     padding-left: 1.5rem;
 }
 
@@ -598,7 +598,7 @@ input:hover {
     color: var(--clr-grey-10);
     position: absolute;
     left: 30px;
-    bottom: 28.5px;
+    bottom: 31.5px;
     /* cursor: pointer; */
 }
 
@@ -625,12 +625,12 @@ input:hover {
     border-radius: var(--radius);
     border-bottom: 4px solid transparent;
     box-shadow: var(--light-shadow);
-    margin-bottom: 1rem;
+    margin: 2rem;
 }
 
 .item img {
-    width: 50%;
-    height: 250px;
+    /* width: 50%;
+    height: 250px; */
     /* float: center; */
     object-fit: cover;
 }
